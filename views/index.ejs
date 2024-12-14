@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke Finder</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <form id="textForm" action="/joke" class="form" method="POST">
+            <label for="textInput">Enter a word to search relevant jokes:</label>
+            <input type="text" id="textInput" name="textInput" required>
+            <button class="submit-button" type="submit">Find Joke!</button>
+        </form>
+        <%if (locals.jokeSetup) {%>
+            <div class="setup">
+                <span id="displayText">Setup: <%=jokeSetup%></span>
+            </div>
+            <div class="delivery">
+                <span id="displayText">Delivery: <%=jokeDelivery%></span>
+            </div>
+        <%} else {%>
+            <div class="delivery">
+                <span id="displayText">Click "Find Joke!" to see your joke appear here</span>
+            </div>
+        <%}%>
+    </div>
+</body>
+</html>
